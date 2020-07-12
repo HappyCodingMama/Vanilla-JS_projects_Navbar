@@ -4,11 +4,20 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Oswald', sans-serif;
     font-size: 1.7rem;
+    color: black;
     line-height: 1.5;
+    background-color: #c7ecee;
 }
+
+nav {
+    min-height: 8vh;
+    background-color: white; 
+}
+
 
 ul {
     list-style-type: none;
@@ -30,11 +39,13 @@ img {
     display: block;
 }
 
+
 .nav-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background-color: white;
 }
 
 .nav-toggle {
@@ -42,6 +53,8 @@ img {
     background: transparent;
     border-color: transparent;
     cursor: pointer;
+    transition: .3s ease transform;
+    outline:none;
 }
 
 .nav-toggle:hover {
@@ -52,11 +65,18 @@ img {
     display: flex;
 }
 
+#icon-img {
+    filter: grayscale(1);
+    transition: .3s ease filter;
+    width: 20px
+}
+
 
 /* By default hide links */
 .links {
     height: auto;
     display: flex;
+    
 }
 
 .links a {
@@ -65,31 +85,37 @@ img {
     display: block;
     padding: 0;
     margin: 0 0.5rem;
+    color: black;
 }
 
 .links a:hover {
     padding: 0;
     background: transparent;
+    color: red;
+    
 }
 
 .social-icons {
     display: none;
+
 }
 
 /*Toggle class */
-.show-links {
-    height: 10rem;
-}
 
 .links {
     height: 0;
     overflow: hidden;
-    transiton: var(--transition);
+    transition: var(--transition);
 }
 
 .show-links {
-    height: 10rem;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    transition: .5s ease height;
 }
+
 
 
 @media screen and (min-width: 800px) {
@@ -100,10 +126,12 @@ img {
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
+        background-color: white;
     }
 
     .nav-header {
         padding: 0;
+        
     }
 
     .nav-toggle {
@@ -112,7 +140,6 @@ img {
 
     .links {
         height: auto;
-        display: flex;
     }
 
     .links a {
@@ -123,6 +150,7 @@ img {
     .links a:hover {
         padding: 0;
         background: transparent;
+        color: red;
     }
 
     .social-icons {
